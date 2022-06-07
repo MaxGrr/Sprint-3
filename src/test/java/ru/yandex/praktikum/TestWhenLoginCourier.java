@@ -66,7 +66,7 @@ public class TestWhenLoginCourier {
     @Test
     @DisplayName("Авторизация с неверным логином")
     @Description("Авторизация курьера, с ошибкой в поле - логин")
-    public void courierLoginWithoutLogin() {
+    public void courierLoginWithoutValue() {
         Courier firstCourier = Courier.getAllRandom();
         courierClient.create(firstCourier);
         ValidatableResponse firstLoginResponse = courierClient.login(CourierCredentials.from(firstCourier));
@@ -102,7 +102,7 @@ public class TestWhenLoginCourier {
     @Test
     @DisplayName("Авторизация с пустым логином")
     @Description("Авторизация курьера, без ввода логина")
-    public void courierLoginFromNullLogin() {
+    public void courierLoginFromNullValue() {
         Courier firstCourier = Courier.getAllRandom();
         courierClient.create(firstCourier);
         ValidatableResponse firstLoginResponse = courierClient.login(CourierCredentials.from(firstCourier));
